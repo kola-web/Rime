@@ -1,26 +1,46 @@
 patch:
-  "style/font_point": 14     # 字號，只認數字的，不認「五號」、「小五」這樣的
-  # 特定App默认中/英文输入   
+  style:
+    # 选择皮肤，亮色与暗色主题
+    color_scheme: dark_temple
+
+    # 预设选项。如果皮肤没写，则使用这些属性；如果皮肤写了，使用皮肤的。
+    text_orientation: horizontal # horizontal | vertical
+    inline_preedit: true
+    corner_radius: 10
+    hilited_corner_radius: 0
+    border_height: 0
+    border_width: 0
+    line_spacing: 5
+    spacing: 10
+    #candidate_format: '%c. %@'
+    #base_offset: 6
+    font_face: 'Lucida Grande'
+    font_point: 16
+    #label_font_face: 'Lucida Grande'
+    label_font_point: 18
+    #comment_font_face: 'Lucida Grande'
+    comment_font_point: 18
+  # 特定App默认中/英文输入
   # 以下软件默认英文模式
   # osascript -e 'id of app "SomeApp"'
   # ascii_mode : true   # true默认英文,false默认中文
-  # ascii_punct: true   # 中文状态输出英文标点(半角) 
+  # ascii_punct: true   # 中文状态输出英文标点(半角)
   # vim_mode : true     #退出VIM模式自动切换输入法状态
-  app_options:    
-    com.apple.Spotlight:             # 聚焦搜索
-        ascii_mode: true             # true默认英文,false默认中文
+  app_options:
+    com.apple.Spotlight: # 聚焦搜索
+      ascii_mode: true # true默认英文,false默认中文
     com.raycast.macos:
-        ascii_mode: true             
-    com.runningwithcrayons.Alfred:   # alfred
-        ascii_mode: true
-    com.tencent.Lemon:               # 腾讯柠檬
-        ascii_mode: true
-    com.apple.dt.Xcode:              # Xcode
-        ascii_mode: true
-    com.nektony.App-Cleaner-SII:     # App Cleaner & Uninstaller
-        ascii_mode: true
-    com.xunyong.hapigo:              # hapigo
-        ascii_mode: true
+      ascii_mode: true
+    com.runningwithcrayons.Alfred: # alfred
+      ascii_mode: true
+    com.tencent.Lemon: # 腾讯柠檬
+      ascii_mode: true
+    com.apple.dt.Xcode: # Xcode
+      ascii_mode: true
+    com.nektony.App-Cleaner-SII: # App Cleaner & Uninstaller
+      ascii_mode: true
+    com.xunyong.hapigo: # hapigo
+      ascii_mode: true
     com.apple.finder:
       ascii_mode: true
     com.microsoft.VSCode:
@@ -56,4 +76,3 @@ patch:
     md.obsidian:
       ascii_mode: true
       vim_mode: true
-

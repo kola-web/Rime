@@ -1,4 +1,5 @@
 patch:
+  "style/font_point": 14     # 字號，只認數字的，不認「五號」、「小五」這樣的
   # 特定App默认中/英文输入   
   # 以下软件默认英文模式
   # osascript -e 'id of app "SomeApp"'

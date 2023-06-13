@@ -1,12 +1,12 @@
 patch:
   "menu/page_size": 5
   schema_list:
-    - schema: luna_pinyin_simp # 朙月拼音
-  #   - schema: rime_ice
-  #   - schema: double_pinyin
-  #   - schema: double_pinyin_flypy
-  #   - schema: double_pinyin_mspy
-  #   - schema: double_pinyin_ziguang
+    # - schema: luna_pinyin_simp # 朙月拼音
+    - schema: rime_ice
+    - schema: double_pinyin
+    - schema: double_pinyin_flypy
+    - schema: double_pinyin_mspy
+    - schema: double_pinyin_ziguang
   switcher:
     caption: 「方案选单」
     hotkeys:

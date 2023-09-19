@@ -49,6 +49,7 @@ patch:
     org.alacritty:
       ascii_mode: true
       vim_mode: true
+      panelless_commit_fix: true
     com.jetbrains.WebStorm:
       ascii_mode: true
       vim_mode: true
@@ -74,5 +75,8 @@ patch:
       ascii_mode: true
       vim_mode: true
     md.obsidian:
+      ascii_mode: true
+      vim_mode: true
+    com.github.wez.wezterm:
       ascii_mode: true
       vim_mode: true

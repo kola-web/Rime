@@ -33,3 +33,4 @@ patch:
       - { when: has_menu, accept: bracketright, send: Page_Down } # "]" 下一页
 
       - { when: always, accept: Control+period, toggle: ascii_punct }
+

@@ -22,7 +22,7 @@ function M.init(env)
         "cent", "chad", "chan", "chap", "char", "chat", "chef", "chen", "cher", "chew", "chic", "chin", "chip", "chit",
         "coup", "cum", "cunt", "cup", "cur", "cut", "dab", "dad", "dag", "dal", "dam", "day", "def", "del", "den",
         "dent", "deny", "der", "dew", "dial", "did", "died", "dies", "diet", "dig", "dim", "din", "dip", "dir", "dis",
-        "dit", "diy", "doug", "dub", "dug", "dun", "dunn", "end", "err", "fab", "fan", "fans", "faq", "far", "fat",
+        "dit", "diy", "doug", "dub", "dug", "dun", "dunn", "don", "end", "err", "fab", "fan", "fans", "faq", "far", "fat",
         "fax", "fob", "fog", "for", "foul", "four", "fox", "fun", "fur", "gag", "gail", "gain", "gal", "gam", "gan",
         "gang", "gank", "gaol", "gap", "gas", "gay", "ged", "gel", "gem", "gen", "ger", "get", "guam", "guid", "gum",
         "gun", "guns", "gus", "gut", "guy", "had", "hail", "hair", "ham", "han", "hand", "hang", "hank", "hans", "has",
@@ -46,7 +46,11 @@ function M.init(env)
         "tier", "ties", "tim", "tin", "tip", "tit", "tour", "tout", "tum", "wag", "wait", "wail", "wan", "wand", "womens",
         "want", "wap", "war", "was", "wax", "way", "weir", "went", "won", "wow", "yan", "yang", "yen", "yep", "yes",
         "yet", "yin", "your", "yum", "zen", "zip",
-        -- 下面是其他长度的
+        -- 后面是 zh ch sh 的
+        "bach", "bash", "bench", "bush", "cash", "couch", "dash", "dish", "hash", "hush", "lash", "loch", "lunch",
+        "lush", "mesh", "much", "nash", "pinch", "pouch", "push", "ranch", "rich", "rush", "such", "tech", "touch",
+        "wash", "zach",
+        -- 其他
         "quanx", "eg",
     }
     M.all = {}

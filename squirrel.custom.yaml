@@ -1,8 +1,8 @@
 patch:
   style:
     # 选择皮肤，亮色与暗色主题
-    color_scheme: macos_dark
-    color_scheme_dark: macos_dark
+    color_scheme: wechat_light
+    color_scheme_dark: wechat_light
     font_face: "Maple Mono SC NF"
     label_font_face: "Maple Mono SC NF" # 序号字体及大小
     comment_font_face: "Maple Mono SC NF" # 注字体及大小

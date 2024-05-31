@@ -38,3 +38,4 @@ patch:
       - { when: composing, accept: Control+j, send: Down } # Ctrl + j 下一个
 
       - { when: composing, accept: Control+h, send: BackSpace }
+      - { when: composing, accept: Control+i, send: Shift+Delete }

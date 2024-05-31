@@ -30,12 +30,19 @@ patch:
       - { when: has_menu, accept: period, send: Page_Down } # "." 下一页
       - { when: paging, accept: bracketleft, send: Page_Up } # "[" 上一页
       - { when: has_menu, accept: bracketright, send: Page_Down } # "]" 下一页
-      - { when: composing, accept: Control+p, send: Up } # Ctrl + p 上一页
-      - { when: composing, accept: Control+n, send: Down } # Ctrl + n 下一页
 
-      - { when: composing, accept: Tab, send: space } # Tab 键上屏
+
+      - { when: has_menu, accept: Control+u, send: Page_Up } # Ctrl + u 上一页
+      - { when: paging, accept: Control+d, send: Page_Down } # Ctrl + d 下一页
       - { when: composing, accept: Control+k, send: Up } # Ctrl + k 上一个
       - { when: composing, accept: Control+j, send: Down } # Ctrl + j 下一个
-
+      - { when: composing, accept: Control+p, send: Up } # Ctrl + p 上一页
+      - { when: composing, accept: Control+n, send: Down } # Ctrl + n 下一页
+      - { when: composing, accept: Tab, send: space } # Tab 键上屏
       - { when: composing, accept: Control+h, send: BackSpace }
       - { when: composing, accept: Control+i, send: Shift+Delete }
+      - { when: composing, accept: Control+b, send: Left }
+      - { when: composing, accept: Control+f, send: Right }
+      - { when: composing, accept: Control+a, send: Home }
+      - { when: composing, accept: Control+e, send: End }
+      - { when: composing, accept: Control+d, send: Delete }

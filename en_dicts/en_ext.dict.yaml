@@ -16,7 +16,6 @@ sort: by_weight
 .DS_Store	.DS_Store
 README.md	README.md
 
-
 # 按键
 Fn	Fn
 cmd	cmd
@@ -1020,7 +1019,8 @@ Digital Millennium Copyright Act	DigitalMillenniumCopyrightAct
 PUA	PUA
 Pickup Artists	PUA
 Pickup Artists	PickupArtists
-docker	docker
+Dockerfile	Dockerfile
+Docker Hub	DockerHub
 Darcula	Darcula
 Google Analytics	GoogleAnalytics
 Cloudflare Pages	CloudflarePages
@@ -2403,3 +2403,7 @@ FPGA	FPGA
 field-programmable gate array	FPGA
 Samsung	Samsung
 Samsung Galaxy	SamsungGalaxy
+VimL	VimL
+Vimscript	Vimscript
+Vimscripts	Vimscripts
+kubectl	kubectl

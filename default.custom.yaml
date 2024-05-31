@@ -24,12 +24,17 @@ patch:
       Control_R: noop # commit_code | commit_text | inline_ascii | clear | noop
   key_binder:
     bindings:
-      - { when: composing, accept: Tab, send: Shift+Right } # "tab" 键分词
-      - { when: paging, accept: minus, send: Page_Up } # "-" 上一页
-      - { when: has_menu, accept: equal, send: Page_Down } # "=" 下一页
+      - { when: always, accept: Control+period, toggle: ascii_punct } # Ctrl + . 切换全角半角
+
       - { when: paging, accept: comma, send: Page_Up } # "," 上一页
       - { when: has_menu, accept: period, send: Page_Down } # "." 下一页
       - { when: paging, accept: bracketleft, send: Page_Up } # "[" 上一页
       - { when: has_menu, accept: bracketright, send: Page_Down } # "]" 下一页
+      - { when: composing, accept: Control+p, send: Page_Up } # Ctrl + p 上一页
+      - { when: composing, accept: Control+n, send: Page_Down } # Ctrl + n 下一页
 
-      - { when: always, accept: Control+period, toggle: ascii_punct }
+      - { when: composing, accept: Tab, send: space } # Tab 键上屏
+      - { when: composing, accept: Control+k, send: Up } # Ctrl + k 上一个
+      - { when: composing, accept: Control+j, send: Down } # Ctrl + j 下一个
+
+      - { when: composing, accept: Control+h, send: BackSpace }

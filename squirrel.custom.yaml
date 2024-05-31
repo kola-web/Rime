@@ -1,11 +1,13 @@
 patch:
   style:
     # 选择皮肤，亮色与暗色主题
-    color_scheme: wechat_light
-    color_scheme_dark: wechat_light
+    color_scheme: macos_dark
+    color_scheme_dark: macos_dark
     font_face: "Maple Mono SC NF"
     label_font_face: "Maple Mono SC NF" # 序号字体及大小
     comment_font_face: "Maple Mono SC NF" # 注字体及大小
+    candidate_list_layout: stacked # 候选排布：层叠 stacked | 行 linear
+    text_orientation: horizontal # 行文向： 横 horizontal | 纵 vertical
   preset_color_schemes:
     macos_light:
       name: "MacOS 浅色／MacOS Light"
@@ -14,8 +16,6 @@ patch:
       label_font_point: 12
       comment_font_point: 16
       candidate_format: "%c\u2005%@\u2005" # 编号 %c 和候选词 %@ 前后的空间
-      candidate_list_layout: linear # 候选排布：层叠 stacked | 行 linear
-      text_orientation: horizontal # 行文向： 横 horizontal | 纵 vertical
       inline_preedit: true # 拼音位于： 候选框 false | 行内 true
       translucency: false # 磨砂： false | true
       mutual_exclusive: false # 色不叠加： false | true
@@ -52,8 +52,6 @@ patch:
       label_font_point: 12
       comment_font_point: 16
       candidate_format: "%c\u2005%@\u2005" # 编号 %c 和候选词 %@ 前后的空间
-      candidate_list_layout: linear # 候选排布：层叠 stacked | 行 linear
-      text_orientation: horizontal # 行文向： 横 horizontal | 纵 vertical
       inline_preedit: true # 拼音位于： 候选框 false | 行内 true
       translucency: false # 磨砂： false | true
       mutual_exclusive: false # 色不叠加： false | true
@@ -90,8 +88,6 @@ patch:
       label_font_point: 13
       comment_font_point: 16
       candidate_format: "%c\u2005%@\u2005" # 编号 %c 和候选词 %@ 前后的空间
-      candidate_list_layout: linear # 候选排布：层叠 stacked | 行 linear
-      text_orientation: horizontal # 行文向： 横 horizontal | 纵 vertical
       inline_preedit: true # 拼音位于： 候选框 false | 行内 true
       translucency: false # 磨砂： false | true
       mutual_exclusive: false # 色不叠加： false | true
@@ -128,8 +124,6 @@ patch:
       label_font_point: 13
       comment_font_point: 16
       candidate_format: "%c\u2005%@\u2005" # 编号 %c 和候选词 %@ 前后的空间
-      candidate_list_layout: linear # 候选排布：层叠 stacked | 行 linear
-      text_orientation: horizontal # 行文向： 横 horizontal | 纵 vertical
       inline_preedit: true # 拼音位于： 候选框 false | 行内 true
       translucency: false # 磨砂： false | true
       mutual_exclusive: false # 色不叠加： false | true

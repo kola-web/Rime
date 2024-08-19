@@ -39,6 +39,9 @@ patch:
     powershell.exe:
       vim_mode: true
       ascii_mode: true
+  dontstarve_steam.exe:
+      vim_mode: true
+      ascii_mode: true
     # conhost.exe:
     #   ascii_mode: true
     # mintty.exe:

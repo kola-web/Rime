@@ -19,7 +19,7 @@ patch:
     switch_key:
       Caps_Lock: clear # commit_code | commit_text | clear
       Shift_L: commit_code # commit_code | commit_text | inline_ascii | clear | noop
-      Shift_R: noop # commit_code | commit_text | inline_ascii | clear | noop
+      Shift_R: inline_ascii # commit_code | commit_text | inline_ascii | clear | noop
       Control_L: noop # commit_code | commit_text | inline_ascii | clear | noop
       Control_R: noop # commit_code | commit_text | inline_ascii | clear | noop
   key_binder:
@@ -30,7 +30,6 @@ patch:
       - { when: has_menu, accept: period, send: Page_Down } # "." 下一页
       - { when: paging, accept: bracketleft, send: Page_Up } # "[" 上一页
       - { when: has_menu, accept: bracketright, send: Page_Down } # "]" 下一页
-
 
       - { when: has_menu, accept: Control+u, send: Page_Up } # Ctrl + u 上一页
       - { when: paging, accept: Control+d, send: Page_Down } # Ctrl + d 下一页

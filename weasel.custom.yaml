@@ -48,6 +48,9 @@ patch:
     webstorm64.exe:
         vim_mode: true
         ascii_mode: true
+    neovide.exe:
+        vim_mode: true
+        ascii_mode: true
     # conhost.exe:
     #   ascii_mode: true
     # mintty.exe:

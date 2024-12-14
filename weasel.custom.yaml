@@ -21,6 +21,9 @@ patch:
     code.exe:
       vim_mode: true # vim 模式, Esc <C-c> <C-[> 切换到 ascii 状态
       ascii_mode: true # 英文模式
+    终端:
+      vim_mode: true # vim 模式, Esc <C-c> <C-[> 切换到 ascii 状态
+      ascii_mode: true # 英文模式
     windowsterminal.exe:
       vim_mode: true # vim 模式, Esc <C-c> <C-[> 切换到 ascii 状态
       ascii_mode: true # 英文模式

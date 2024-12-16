@@ -57,6 +57,9 @@ patch:
     lapce.exe:
         vim_mode: true
         ascii_mode: true
+    tabby.exe:
+        vim_mode: true
+        ascii_mode: true
     # conhost.exe:
     #   ascii_mode: true
     # mintty.exe:

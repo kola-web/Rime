@@ -46,20 +46,20 @@ patch:
       vim_mode: true
       ascii_mode: true
     dontstarve_steam.exe:
-        vim_mode: true
-        ascii_mode: true
+      vim_mode: true
+      ascii_mode: true
     webstorm64.exe:
-        vim_mode: true
-        ascii_mode: true
+      vim_mode: true
+      ascii_mode: true
     neovide.exe:
-        vim_mode: true
-        ascii_mode: true
+      vim_mode: true
+      ascii_mode: true
     lapce.exe:
-        vim_mode: true
-        ascii_mode: true
+      vim_mode: true
+      ascii_mode: true
     tabby.exe:
-        vim_mode: true
-        ascii_mode: true
+      vim_mode: true
+      ascii_mode: true
     # conhost.exe:
     #   ascii_mode: true
     # mintty.exe:
@@ -148,3 +148,4 @@ patch:
   # 小狼毫配色在线设计：
   # [RIME 西米](https://fxliang.github.io/RimeSeeMe/)
   # [小狼毫配色详解](https://github.com/rime/weasel/wiki/定制小狼毫配色)
+

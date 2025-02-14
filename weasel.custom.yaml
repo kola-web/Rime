@@ -60,6 +60,9 @@ patch:
     tabby.exe:
       vim_mode: true
       ascii_mode: true
+    obsidian.exe:
+      vim_mode: true
+      ascii_mode: true
     # conhost.exe:
     #   ascii_mode: true
     # mintty.exe:

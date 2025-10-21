@@ -1,5 +1,4 @@
 patch:
-  __include: rime_ice_suggestion:/
   switcher:
     hotkeys:
       - F4

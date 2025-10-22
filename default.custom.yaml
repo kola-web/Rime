@@ -1,5 +1,7 @@
 patch:
   __patch:
+    schema_list:
+      - schema: rime_ice # 雾凇拼音（全拼）
     switcher:
       hotkeys:
         - F4

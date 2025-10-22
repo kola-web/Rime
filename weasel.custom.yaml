@@ -24,7 +24,7 @@ patch:
     wt.exe: { ascii_mode: true, vim_mode: true }
     "终端": { ascii_mode: true, vim_mode: true }
   config_version: "2024-05-14"
-  global_ascii: true
+  global_ascii: false
   show_notifications: true
   show_notifications_time: 1200
   style:

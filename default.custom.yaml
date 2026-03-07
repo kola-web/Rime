@@ -2,6 +2,8 @@ patch:
   __patch:
     schema_list:
       - schema: rime_ice # 雾凇拼音（全拼）
+    punctuator:
+      digit_separators: ""  # 在此处指定的字符，在数字后被输入，若再次输入数字，则连同数字直接上屏；若双击，则恢复映射。 # librime >= 28a234f
     switcher:
       hotkeys:
         - F4

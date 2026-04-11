@@ -20,7 +20,7 @@ patch:
     webstorm64.exe: { ascii_mode: true, vim_mode: true }
     wechat.exe: { ascii_mode: true, vim_mode: true }
     "wezterm-gui.exe": { ascii_mode: true, vim_mode: true }
-    windowsterminal.exe: { ascii_mode: true, vim_mode: true }
+    WindowsTerminal.exe: { ascii_mode: true, vim_mode: true }
     wt.exe: { ascii_mode: true, vim_mode: true }
     "终端": { ascii_mode: true, vim_mode: true }
     "Trae CN.exe": { ascii_mode: true, vim_mode: true }

@@ -28,3 +28,4 @@ installation.yaml
 .DS_Store
 Thumbs.db
 desktop.ini
+/build

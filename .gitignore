@@ -1,3 +1,20 @@
-/rime_ice.userdb.old/lost
-/rime_ice.userdb
-/rime_ice.userdb.old
+# Rime用户数据库（自动生成的学习数据）
+*.userdb/
+*.userdb.old/
+*.userdb.old/lost/
+
+# 编译生成的二进制文件（从.yaml自动生成）
+build/
+
+# 用户同步数据
+sync/
+
+# 本地备份
+backup/
+
+# 用户特定配置文件（含机器ID等）
+user.yaml
+installation.yaml
+
+# Git仓库本身
+.git/  # 这行可选，Git通常会自动处理

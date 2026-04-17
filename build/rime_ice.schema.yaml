@@ -1,11 +1,11 @@
 __build_info:
   rime_version: 1.13.1
   timestamps:
-    default: 1776386495
-    default.custom: 1776386746
-    rime_ice.custom: 0
-    rime_ice.schema: 1776386495
-    symbols_v: 1776386495
+    default: 1772876505
+    default.custom: 1776390997
+    rime_ice.custom: 1772876762
+    rime_ice.schema: 1776390997
+    symbols_v: 1776390997
     symbols_v.custom: 0
 cn_en:
   comment_format:
@@ -848,6 +848,7 @@ speller:
   initials: zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA
 switches:
   - name: ascii_mode
+    reset: 1
     states: ["中", "Ａ"]
   - name: ascii_punct
     states: ["¥", "$"]

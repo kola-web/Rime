@@ -1,8 +1,6 @@
 patch:
   schema_list:
     - schema: rime_ice # 雾凇拼音（全拼）
-  punctuator:
-    digit_separators: "" # 禁用数字后标点自动上屏功能
   switcher:
     hotkeys:
       - F4

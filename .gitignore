@@ -1,9 +1,10 @@
-# Rime用户数据库（自动生成的学习数据）
+# Rime 用户数据库（自动生成的学习数据）
 *.userdb/
 *.userdb.old/
-*.userdb.old/lost/
+*.userdb.txt
+*.userdb.kct
 
-# 编译生成的二进制文件（从.yaml自动生成）
+# 编译生成的二进制文件（从 .yaml 自动生成）
 build/
 
 # 用户同步数据
@@ -16,5 +17,14 @@ backup/
 user.yaml
 installation.yaml
 
-# Git仓库本身
-.git/  # 这行可选，Git通常会自动处理
+# 日志和临时文件
+*.log
+*.tmp
+*.temp
+*.bak
+*~
+
+# 系统文件
+.DS_Store
+Thumbs.db
+desktop.ini

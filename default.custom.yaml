@@ -4,7 +4,7 @@ patch:
   # 禁用数字后标点自动上屏功能
   # 默认情况下，输入数字后按 . 会等待（用于输入小数如 1.5）
   # 禁用后，数字后按 . 直接上屏当前模式的标点（中文模式上屏 。，英文模式上屏 .）
-  "punctuator/digit_separators": ""
+  # "punctuator/digit_separators": ""
   switcher:
     hotkeys:
       - F4

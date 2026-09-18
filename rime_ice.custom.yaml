@@ -1,0 +1,15 @@
+# rime_ice 方案定制
+# 恢复旧偏好：启动/切换窗口后默认英文
+# 万象语法模型（wanxiang-lts-zh-hans.gram）官方配方参数
+patch:
+  "switches/@0/reset": 1  # 将 switcher 列表第一个元素（ascii_mode）初始值设为 1（英文）；0 为中文
+  grammar:
+    language: wanxiang-lts-zh-hans
+    collocation_max_length: 6
+    collocation_min_length: 3
+    collocation_penalty: -14
+    non_collocation_penalty: -6
+    weak_collocation_penalty: -100
+    rear_penalty: -20
+  translator/contextual_suggestions: false
+  translator/max_homophones: 8

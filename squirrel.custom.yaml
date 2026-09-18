@@ -152,6 +152,7 @@ patch:
       # preedit_back_color:                   # 拼音底色 （inline_preedit: false）
       hilited_back_color: 0x79af22 # 选中拼音底色 （inline_preedit: false）
       border_color: 0x292929 # 外边框颜色
+
   # 特定App默认中/英文输入
   # 以下软件默认英文模式
   # osascript -e 'id of app "SomeApp"'
@@ -213,6 +214,24 @@ patch:
       ascii_mode: true
       vim_mode: true
     com.jetbrains.PhpStorm:
+      ascii_mode: true
+      vim_mode: true
+    com.jetbrains.intellij: # IntelliJ IDEA
+      ascii_mode: true
+      vim_mode: true
+    com.jetbrains.pycharm:
+      ascii_mode: true
+      vim_mode: true
+    com.jetbrains.goland:
+      ascii_mode: true
+      vim_mode: true
+    com.jetbrains.clion:
+      ascii_mode: true
+      vim_mode: true
+    com.jetbrains.rider:
+      ascii_mode: true
+      vim_mode: true
+    com.jetbrains.datagrip:
       ascii_mode: true
       vim_mode: true
     com.ident.goneovim:

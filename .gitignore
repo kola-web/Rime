@@ -24,8 +24,14 @@ installation.yaml
 *.bak
 *~
 
+# 更新脚本临时产物
+rime-ice-new/
+rime-ice-temp.zip
+
 # 系统文件
 .DS_Store
 Thumbs.db
 desktop.ini
-/build
+
+# 语法模型文件（体积大，不入库）
+*.gram

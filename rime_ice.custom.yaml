@@ -1,4 +1,4 @@
-# rime_ice 方案定制
+# rime_ice.custom.yaml
 # 恢复旧偏好：启动/切换窗口后默认英文
 # 万象语法模型（wanxiang-lts-zh-hans.gram）官方配方参数
 patch:
@@ -11,5 +11,5 @@ patch:
     non_collocation_penalty: -6
     weak_collocation_penalty: -100
     rear_penalty: -20
-  translator/contextual_suggestions: false
+  translator/contextual_suggestions: true
   translator/max_homophones: 8

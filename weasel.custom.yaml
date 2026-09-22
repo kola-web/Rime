@@ -6,31 +6,31 @@ customization:
   rime_version: 1.13.1
 patch:
   app_options:
-    "Trae CN.exe": {ascii_mode: true, vim_mode: true}
-    WindowsTerminal.exe: {ascii_mode: true, vim_mode: true}
-    Zed.exe: {ascii_mode: true, vim_mode: true}
-    chrome.exe: {ascii_mode: true, vim_mode: true}
-    clion64.exe: {ascii_mode: true, vim_mode: true}
-    cmd.exe: {ascii_mode: true, vim_mode: true}
-    code.exe: {ascii_mode: true, vim_mode: true}
-    datagrip64.exe: {ascii_mode: true, vim_mode: true}
-    dontstarve_steam.exe: {ascii_mode: true, vim_mode: true}
-    firefox.exe: {inline_preedit: true}
-    goland64.exe: {ascii_mode: true, vim_mode: true}
-    idea64.exe: {ascii_mode: true, vim_mode: true}
-    lapce.exe: {ascii_mode: true, vim_mode: true}
-    neovide.exe: {ascii_mode: true, vim_mode: true}
-    obsidian.exe: {ascii_mode: true, vim_mode: true}
-    powershell.exe: {ascii_mode: true, vim_mode: true}
-    pwsh.exe: {ascii_mode: true, vim_mode: true}
-    pycharm64.exe: {ascii_mode: true, vim_mode: true}
-    rider64.exe: {ascii_mode: true, vim_mode: true}
-    tabby.exe: {ascii_mode: true, vim_mode: true}
-    webstorm64.exe: {ascii_mode: true, vim_mode: true}
-    wechat.exe: {ascii_mode: true, vim_mode: true}
-    "wezterm-gui.exe": {ascii_mode: true, vim_mode: true}
-    wt.exe: {ascii_mode: true, vim_mode: true}
-    "终端": {ascii_mode: true, vim_mode: true}
+    "Trae CN.exe": { ascii_mode: true, vim_mode: true }
+    WindowsTerminal.exe: { ascii_mode: true, vim_mode: true }
+    Zed.exe: { ascii_mode: true, vim_mode: true }
+    chrome.exe: { ascii_mode: true, vim_mode: true }
+    clion64.exe: { ascii_mode: true, vim_mode: true }
+    cmd.exe: { ascii_mode: true, vim_mode: true }
+    code.exe: { ascii_mode: true, vim_mode: true }
+    datagrip64.exe: { ascii_mode: true, vim_mode: true }
+    dontstarve_steam.exe: { ascii_mode: true, vim_mode: true }
+    firefox.exe: { inline_preedit: true }
+    goland64.exe: { ascii_mode: true, vim_mode: true }
+    idea64.exe: { ascii_mode: true, vim_mode: true }
+    lapce.exe: { ascii_mode: true, vim_mode: true }
+    neovide.exe: { ascii_mode: true, vim_mode: true }
+    obsidian.exe: { ascii_mode: true, vim_mode: true }
+    powershell.exe: { ascii_mode: true, vim_mode: true }
+    pwsh.exe: { ascii_mode: true, vim_mode: true }
+    pycharm64.exe: { ascii_mode: true, vim_mode: true }
+    rider64.exe: { ascii_mode: true, vim_mode: true }
+    tabby.exe: { ascii_mode: true, vim_mode: true }
+    webstorm64.exe: { ascii_mode: true, vim_mode: true }
+    wechat.exe: { ascii_mode: true, vim_mode: true }
+    "wezterm-gui.exe": { ascii_mode: true, vim_mode: true }
+    wt.exe: { ascii_mode: true, vim_mode: true }
+    "终端": { ascii_mode: true, vim_mode: true }
   config_version: "2024-05-14"
   global_ascii: false
   show_notifications: true
@@ -40,8 +40,8 @@ patch:
     ascii_tip_follow_cursor: false
     candidate_abbreviate_length: 30
     click_to_capture: false
-    color_scheme: brisk
-    color_scheme_dark: nord
+    color_scheme: dracula_light
+    color_scheme_dark: dracula_dark
     comment_font_face: "Microsoft YaHei"
     comment_font_point: 13
     display_tray_icon: false
@@ -55,7 +55,28 @@ patch:
     label_font_face: "Microsoft YaHei"
     label_font_point: 12
     label_format: "%s"
-    layout: {align_type: center, baseline: 0, border_width: 0, candidate_spacing: 0, corner_radius: 8, hilite_padding: 8, hilite_spacing: 4, linespacing: 0, margin_x: 0, margin_y: 0, max_height: 400, max_width: 0, min_height: 0, min_width: 0, round_corner: 8, shadow_offset_x: 0, shadow_offset_y: 0, shadow_radius: 0, spacing: 2}
+    layout:
+      {
+        align_type: center,
+        baseline: 0,
+        border_width: 0,
+        candidate_spacing: 0,
+        corner_radius: 8,
+        hilite_padding: 8,
+        hilite_spacing: 4,
+        linespacing: 0,
+        margin_x: 0,
+        margin_y: 0,
+        max_height: 400,
+        max_width: 0,
+        min_height: 0,
+        min_width: 0,
+        round_corner: 8,
+        shadow_offset_x: 0,
+        shadow_offset_y: 0,
+        shadow_radius: 0,
+        spacing: 2,
+      }
     mark_text: ""
     mouse_hover_ms: 0
     paging_on_scroll: true
@@ -64,4 +85,57 @@ patch:
     vertical_text: false
     vertical_text_left_to_right: false
     vertical_text_with_wrap: false
-  "style/color_scheme": brisk
+  preset_color_schemes:
+    dracula_dark:
+      name: dracula
+      corner_radius: 5 # 候选条圆角
+      line_spacing: 10 # 行高
+      inline_preedit: true # 单行显示，false双行显示
+      back_color: 0x362A28 # 候选条背景色
+      color_space: display_p3 # Only available on macOS 10.12+
+      font_point: 16 # 候选字词大小
+      text_color: 0x6CB8FF # 拼音行文字颜色，24位色值，16进制，BGR顺序
+      text_orientation: horizontal # horizontal | vertical
+      hilited_text_color: 0x5A4744 # 高亮拼音 (需要开启内嵌编码)
+      hilited_back_color: 0xF2F8F8 # 高亮拼音 (需要开启内嵌编码)
+      hilited_candidate_label_color: 0xFAFAFA # 第一候选项编号颜色
+      hilited_candidate_text_color: 0xF2F8F8 # 第一候选项文字颜色
+      hilited_candidate_back_color: 0xC679FF # 第一候选项背景背景色
+      hilited_comment_text_color: 0x362b00 # 第一候选提示文字颜色
+      hilited_corner_radius: 3 # 高亮圆角
+      comment_text_color: 0xFDE98B # 拼音等提示文字颜色
+      candidate_text_color: 0xF993BD # 预选项文字颜色
+      candidate_format: "%c.\u2005%@\u2005" # 用 1/6 em 空格 U+2005 来控制编号 %c 和候选词 %@ 前后的空间的。
+      candidate_list_layout: linear # 水平排列 linear | stacked
+      label_font_point: 14 # 候选编号大小
+      border_color: 0x362A28 # 窗口边框颜色
+      border_height: 4 # 窗口边界高度，大于圆角半径才生效
+      border_width: 4 # 窗口边界宽度，大于圆角半径才生效
+      border_color_width: 0 # 窗口边框颜色宽度
+
+    dracula_light:
+      name: dracula_light
+      corner_radius: 5 # 候选条圆角
+      line_spacing: 10 # 垂直显示行高
+      inline_preedit: true # 单行显示，false双行显示
+      color_space: display_p3 # Only available on macOS 10.12+
+      back_color: 0xF2F8F8 # 候选条背景色
+      text_color: 0x362A28 # 拼音行文字颜色，24位色值，16进制，BGR顺序
+      text_orientation: horizontal # horizontal | vertical
+      font_point: 16 # 候选字词大小
+      hilited_text_color: 0x362A28 # 高亮拼音 (需要开启内嵌编码)
+      hilited_back_color: 0xF2F8F8 # 高亮拼音 (需要开启内嵌编码)
+      hilited_candidate_label_color: 0xF2F8F8 # 第一候选项编号颜色
+      hilited_candidate_text_color: 0xF2F8F8 # 第一候选项文字颜色
+      hilited_candidate_back_color: 0xC679FF # 第一候选项背景背景色
+      hilited_comment_text_color: 0x362b00 # 第一候选提示文字颜色
+      hilited_corner_radius: 3 # 高亮圆角
+      comment_text_color: 0x5A4744 # 拼音等提示文字颜色
+      candidate_text_color: 0x362A28 # 预选项文字颜色
+      candidate_format: "%c.\u2005%@\u2005" # 用 1/6 em 空格 U+2005 来控制编号 %c 和候选词 %@ 前后的空间的。
+      candidate_list_layout: linear # 水平排列 linear | stacked
+      label_font_point: 14 # 候选编号大小
+      border_color: 0xF2F8F8 # 窗口边框颜色
+      border_height: 4 # 窗口边界高度，大于圆角半径才生效
+      border_width: 4 # 窗口边界宽度，大于圆角半径才生效
+      border_color_width: 0 # 窗口边框颜色宽度

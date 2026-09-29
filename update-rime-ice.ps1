@@ -5,7 +5,7 @@
 
 .DESCRIPTION
     自动完成：备份 -> 拉取上游最新 rime-ice -> 覆盖方案与词库 -> 恢复个人配置 -> 自动重新部署。
-    会保留：*.custom.yaml、custom_phrase.txt、语法模型（*.gram）、用户词库（*.userdb）、同步数据（sync/）。
+    会保留：*.custom.yaml、custom_phrase.txt、用户词库（*.userdb）、同步数据（sync/）。
     若输入法正在运行，个别被进程占用的文件（如 lua/lunar.db）会自动跳过并提示，不影响整体更新。
 
 .PARAMETER SkipDeploy
@@ -14,19 +14,14 @@
 .PARAMETER KeepTemp
     保留临时克隆目录 rime-ice-new，便于检查（默认更新后删除）。
 
-.PARAMETER UpdateGrammar
-    重新下载万象语法模型 wanxiang-lts-zh-hans.gram（约 400MB，覆盖旧文件；跳过则保留现有模型）。
-
 .EXAMPLE
     .\update-rime-ice.ps1
     .\update-rime-ice.ps1 -SkipDeploy -KeepTemp
-    .\update-rime-ice.ps1 -UpdateGrammar
 #>
 [CmdletBinding()]
 param(
     [switch]$SkipDeploy,
-    [switch]$KeepTemp,
-    [switch]$UpdateGrammar
+    [switch]$KeepTemp
 )
 
 $ErrorActionPreference = "Stop"
@@ -40,8 +35,6 @@ $BackupDir    = Join-Path $RimeDir "backup"
 $TempDir      = Join-Path $RimeDir "rime-ice-new"
 $RepoUrl      = "https://github.com/iDvel/rime-ice.git"
 $ZipUrl       = "https://github.com/iDvel/rime-ice/archive/refs/heads/main.zip"
-$GrammarUrl   = "https://github.com/amzxyz/RIME-LMDG/releases/download/LTS/wanxiang-lts-zh-hans.gram"
-$GrammarFile  = Join-Path $RimeDir "wanxiang-lts-zh-hans.gram"
 
 # 需要保留的个人配置文件（相对 Rime 根目录，更新前快照、更新后原样恢复）
 $PreservePatterns = @("*.custom.yaml", "custom_phrase.txt")
@@ -233,27 +226,7 @@ foreach ($name in $preserveFiles) {
 }
 Write-Host ""
 
-# 6. 语法模型（默认保留；-UpdateGrammar 时重新下载）
-if ($UpdateGrammar) {
-    Write-Step "[可选] 更新万象语法模型（约 400MB）"
-    $oldEap = $ErrorActionPreference
-    $ErrorActionPreference = "Continue"
-    curl.exe -sSL --retry 3 -C - -o $GrammarFile $GrammarUrl
-    $ErrorActionPreference = $oldEap
-    if ($LASTEXITCODE -eq 0 -and (Test-Path $GrammarFile)) {
-        $sizeMb = [math]::Round((Get-Item $GrammarFile).Length / 1MB, 1)
-        Write-Done "语法模型已更新: $sizeMb MB"
-    } else {
-        Write-Host "警告: 语法模型下载失败，保留原文件" -ForegroundColor Yellow
-    }
-} elseif (Test-Path $GrammarFile) {
-    Write-Done "语法模型已保留: wanxiang-lts-zh-hans.gram"
-} else {
-    Write-Host "提示: 未检测到语法模型（如需安装请加 -UpdateGrammar）" -ForegroundColor Yellow
-}
-Write-Host ""
-
-# 7. 清理临时目录
+# 6. 清理临时目录
 Write-Step "[5/5] 清理"
 if ($KeepTemp) {
     Write-Done "按 -KeepTemp 保留临时目录: $TempDir"

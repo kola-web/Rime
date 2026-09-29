@@ -6,10 +6,9 @@
 #   chmod +x update-rime-ice.sh
 #   ./update-rime-ice.sh              # 更新并自动重新部署
 #   ./update-rime-ice.sh --no-deploy  # 只更新文件，不自动部署
-#   ./update-rime-ice.sh --grammar    # 同时重新下载万象语法模型（约 400MB）
 #   ./update-rime-ice.sh --keep-temp  # 保留临时克隆目录
 # 说明:
-#   会保留 *.custom.yaml、custom_phrase.txt、语法模型 *.gram、用户词库
+#   会保留 *.custom.yaml、custom_phrase.txt、用户词库
 # ============================================================
 
 set -euo pipefail
@@ -17,17 +16,15 @@ set -euo pipefail
 # ---------- 参数 ----------
 AUTO_DEPLOY=1
 KEEP_TEMP=0
-UPDATE_GRAMMAR=0
 for arg in "$@"; do
     case "$arg" in
         --no-deploy)  AUTO_DEPLOY=0 ;;
         --keep-temp)  KEEP_TEMP=1 ;;
-        --grammar)    UPDATE_GRAMMAR=1 ;;
         -h|--help)
             grep -E '^#\s' "$0" | sed 's/^#\s\?//'
             exit 0
             ;;
-        *) echo "未知参数: $arg（可用 --no-deploy / --keep-temp / --grammar）"; exit 1 ;;
+        *) echo "未知参数: $arg（可用 --no-deploy / --keep-temp）"; exit 1 ;;
     esac
 done
 
@@ -36,8 +33,6 @@ RIME_DIR=""
 BACKUP_DIR=""
 REPO_URL="https://github.com/iDvel/rime-ice.git"
 ZIP_URL="https://github.com/iDvel/rime-ice/archive/refs/heads/main.zip"
-GRAMMAR_URL="https://github.com/amzxyz/RIME-LMDG/releases/download/LTS/wanxiang-lts-zh-hans.gram"
-GRAMMAR_FILE=""
 
 # ---------- 颜色 ----------
 red()   { echo -e "\033[31m$1\033[0m"; }
@@ -73,7 +68,6 @@ detect_os() {
             exit 1
             ;;
     esac
-    GRAMMAR_FILE="$RIME_DIR/wanxiang-lts-zh-hans.gram"
     BACKUP_DIR="$RIME_DIR/backup"
 }
 
@@ -226,9 +220,9 @@ new_version="$(get_version "$TEMP_DIR/rime_ice.schema.yaml")"
 yellow "最新版本: $new_version"
 echo ""
 
-# 3. 更新（跳过 .custom 个人文件，保留 .gram 模型）
+# 3. 更新（跳过 .custom 个人文件）
 step "[3/5] 更新方案与词库"
-# 根目录下的 yaml / txt（注意：通配符必须在未加引号的位置展开）
+# 根目录下的 yaml（注意：通配符必须在未加引号的位置展开）
 for f in "$TEMP_DIR"/*.yaml; do
     [ -f "$f" ] || continue
     base="$(basename "$f")"
@@ -237,14 +231,19 @@ for f in "$TEMP_DIR"/*.yaml; do
         *) cp -f "$f" "$RIME_DIR/" ;;
     esac
 done
+# 根目录下的 txt（跳过 custom_phrase.txt，个人配置由第 4 步恢复）
 for f in "$TEMP_DIR"/*.txt; do
     [ -f "$f" ] || continue
-    cp -f "$f" "$RIME_DIR/"
+    base="$(basename "$f")"
+    case "$base" in
+        custom_phrase.txt) continue ;;
+        *) cp -f "$f" "$RIME_DIR/" ;;
+    esac
 done
-# 子目录
+# 子目录（个别文件被占用时容错，不中断）
 for item in lua cn_dicts en_dicts opencc; do
     if [ -d "$TEMP_DIR/$item" ]; then
-        cp -rf "$TEMP_DIR/$item" "$RIME_DIR/"
+        cp -rf "$TEMP_DIR/$item" "$RIME_DIR/" 2>/dev/null || yellow "    警告: $item 部分文件被占用，保留旧版"
         done_ "已更新: $item"
     fi
 done
@@ -260,29 +259,8 @@ for name in $preserve_files; do
 done
 echo ""
 
-# 5. 语法模型
-if [ "$UPDATE_GRAMMAR" = "1" ]; then
-    step "[5/6] 更新万象语法模型（约 400MB）"
-    if command -v curl >/dev/null 2>&1; then
-        curl -L --retry 3 -C - -o "$GRAMMAR_FILE" "$GRAMMAR_URL"
-        if [ -s "$GRAMMAR_FILE" ]; then
-            size_mb=$(du -m "$GRAMMAR_FILE" | cut -f1)
-            done_ "语法模型已更新: ${size_mb}MB"
-        else
-            yellow "    警告: 语法模型下载失败"
-        fi
-    else
-        yellow "    未找到 curl，跳过语法模型更新"
-    fi
-elif [ -f "$GRAMMAR_FILE" ]; then
-    done_ "语法模型已保留: wanxiang-lts-zh-hans.gram"
-else
-    yellow "提示: 未检测到语法模型（如需安装请加 --grammar）"
-fi
-echo ""
-
-# 6. 清理
-step "[6/6] 清理"
+# 5. 清理
+step "[5/5] 清理"
 if [ "$KEEP_TEMP" = "1" ]; then
     done_ "按 --keep-temp 保留临时目录: $TEMP_DIR"
 else
@@ -291,7 +269,7 @@ else
 fi
 echo ""
 
-# 7. 部署
+# 6. 部署
 if [ "$AUTO_DEPLOY" = "1" ]; then
     step "自动重新部署"
     deploy
@@ -300,7 +278,7 @@ else
 fi
 echo ""
 
-# 8. 结果
+# 7. 结果
 cyan "========================================"
 green "  更新完成！"
 cyan "========================================"

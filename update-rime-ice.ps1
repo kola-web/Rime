@@ -37,7 +37,8 @@ $RepoUrl      = "https://github.com/iDvel/rime-ice.git"
 $ZipUrl       = "https://github.com/iDvel/rime-ice/archive/refs/heads/main.zip"
 
 # 需要保留的个人配置文件（相对 Rime 根目录，更新前快照、更新后原样恢复）
-$PreservePatterns = @("*.custom.yaml", "custom_phrase.txt")
+# rime_ice.dict.yaml 含自定义词库挂载（dst），必须保留，否则上游更新会冲掉挂载
+$PreservePatterns = @("*.custom.yaml", "custom_phrase.txt", "rime_ice.dict.yaml")
 
 function Write-Step {
     param([string]$Text)
@@ -196,7 +197,7 @@ Write-Step "[3/5] 更新方案与词库"
 $copyItems = @("*.yaml", "*.txt")
 foreach ($item in $copyItems) {
     $files = Get-ChildItem -Path $TempDir -Filter $item -File -ErrorAction SilentlyContinue |
-             Where-Object { $_.Name -notlike "*.custom.yaml" -and $_.Name -notlike "*.custom.txt" -and $_.Name -ne "custom_phrase.txt" }
+             Where-Object { $_.Name -notlike "*.custom.yaml" -and $_.Name -notlike "*.custom.txt" -and $_.Name -ne "custom_phrase.txt" -and $_.Name -ne "rime_ice.dict.yaml" }
     foreach ($f in $files) {
         Copy-Item -Path $f.FullName -Destination $RimeDir -Force
     }

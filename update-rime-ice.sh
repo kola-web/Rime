@@ -163,7 +163,7 @@ done_ "完整备份: $full_backup_dir"
 preserve_dir="$BACKUP_DIR/_preserve_$timestamp"
 mkdir -p "$preserve_dir"
 preserve_files=""
-for pattern in "*.custom.yaml" "custom_phrase.txt"; do
+for pattern in "*.custom.yaml" "custom_phrase.txt" "rime_ice.dict.yaml"; do
     for f in $RIME_DIR/$pattern; do
         if [ -f "$f" ]; then
             cp "$f" "$preserve_dir/"
@@ -222,12 +222,13 @@ echo ""
 
 # 3. 更新（跳过 .custom 个人文件）
 step "[3/5] 更新方案与词库"
-# 根目录下的 yaml（注意：通配符必须在未加引号的位置展开）
+# 根目录下的 yaml（注意：通配符必须在未加引号的位置展开；跳过 .custom 与 rime_ice.dict.yaml 个人挂载）
 for f in "$TEMP_DIR"/*.yaml; do
     [ -f "$f" ] || continue
     base="$(basename "$f")"
     case "$base" in
-        *.custom.yaml) continue ;;   # 个人配置由第 4 步恢复
+        *.custom.yaml) continue ;;        # 个人配置由第 4 步恢复
+        rime_ice.dict.yaml) continue ;;   # 含自定义词库挂载（dst），由第 4 步恢复
         *) cp -f "$f" "$RIME_DIR/" ;;
     esac
 done

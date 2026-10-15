@@ -1,0 +1,142 @@
+# Rime dictionary
+# encoding: utf-8
+# ============================================================
+# 饥荒（Don't Starve / Don't Starve Together）名词词库
+# 覆盖：角色、生物、资源、装备、建筑、BOSS
+# 编码：全拼连写（ü 用 v，如 lvmogu）
+# 权重：100（候选靠前但不霸屏，可自行调整）
+# 增改词条后：重新部署小狼毫生效
+# ============================================================
+
+---
+name: dst
+version: "2026-10-15"
+sort: by_weight
+use_preset_vocabulary: false
+...
+
+# ---------- 角色 ----------
+威尔逊	weierxun	100
+薇洛	weiluo	100
+温蒂	wendi	100
+沃尔夫冈	woerfugang	100
+薇克巴顿	weikebadun	100
+伍迪	wudi	100
+韦斯	weisi	100
+麦斯威尔	maisiweier	100
+薇诺娜	weinuona	100
+韦伯	weibo	100
+沃托克斯	wotuokesi	100
+沃尔特	woerte	100
+旺达	wangda	100
+沃姆伍德	womuwude	100
+薇格弗德	weigefude	100
+沃利	woli	100
+沃特	wote	100
+阿比盖尔	abigaier	100
+查理	chali	100
+
+# ---------- 生物 / 怪物 ----------
+猪人	zhuren	100
+兔人	turen	100
+鱼人	yuren	100
+蜘蛛	zhizhu	100
+洞穴蜘蛛	dongxuezhizhu	100
+树精	shujing	100
+高脚鸟	gaojiaoniao	100
+触手	chushou	100
+火鸡	huoji	100
+坎普斯	kanpusi	100
+猎犬	liequan	100
+火猎犬	huoliequan	100
+冰猎犬	bingliequan	100
+疯猪	fengzhu	100
+石虾	shixia	100
+蜗牛龟	woniugui	100
+海象	haixiang	100
+蝙蝠	bianfu	100
+蚊子	wenzi	100
+杀人蜂	sharenfeng	100
+青蛙	qingwa	100
+影怪	yingguai	100
+噩梦生物	emengshengwu	100
+远古守护者	yuangushouhuzhe	100
+
+# ---------- 资源 / 材料 ----------
+燧石	suishi	100
+金块	jinkuai	100
+树枝	shuzhi	100
+干草	gancao	100
+木材	mucai	100
+芦苇	luwei	100
+浆果	jiangguo	100
+胡萝卜	huluobo	100
+曼德拉草	mandelacao	100
+蓝蘑菇	lanmogu	100
+绿蘑菇	lvmogu	100
+红蘑菇	hongmogu	100
+怪物肉	guaiwurou	100
+大肉	darou	100
+小肉	xiaorou	100
+蜂蜜	fengmi	100
+鸡蛋	jidan	100
+高脚鸟蛋	gaojiaoniaodan	100
+萤火虫	yinghuochong	100
+齿轮	chilun	100
+铥矿	duokuang	100
+铥矿碎块	duokuangsuikuai	100
+噩梦燃料	emengranliao	100
+猪皮	zhupi	100
+蜘蛛丝	zhizhusi	100
+牛毛	niumao	100
+
+# ---------- 装备 / 工具 ----------
+火腿棒	huotuibang	100
+长矛	changmao	100
+战矛	zhanmao	100
+斧头	futou	100
+鹤嘴锄	hezuichu	100
+铲子	chanzi	100
+火把	huoba	100
+木甲	mujia	100
+草甲	caojia	100
+橄榄球头盔	ganlanqiutoukui	100
+矿工帽	kuanggongmao	100
+提灯	tideng	100
+背包	beibao	100
+暖石	nuanshi	100
+眼球伞	yanqiusan	100
+雨伞	yusan	100
+捕虫网	buchongwang	100
+钓鱼竿	diaoyugan	100
+陷阱	xianjing	100
+影刀	yingdao	100
+影甲	yingjia	100
+生命护符	shengminghufu	100
+建造护符	jianzaohufu	100
+
+# ---------- 建筑 / 科技 ----------
+营火	yinghuo	100
+火堆	huodui	100
+冰箱	bingxiang	100
+烹饪锅	pengrenguo	100
+晒肉架	shairoujia	100
+科学机器	kexuejiqi	100
+炼金引擎	lianjinyinqing	100
+鸟笼	niaolong	100
+远古祭坛	yuangujitan	100
+复活石	fuhuoshi	100
+传送门	chuansongmen	100
+
+# ---------- BOSS ----------
+巨鹿	julu	100
+熊獾	xionghuan	100
+麋鹿鹅	milue	100
+龙蝇	longying	100
+蚁狮	yishi	100
+克劳斯	kelaosi	100
+蜂后	fenghou	100
+毒菌蟾蜍	dujunchancu	100
+帝王蟹	diwangxie	100
+远古织影者	yuanguzhiyingzhe	100
+天体英雄	tiantiyingxiong	100
